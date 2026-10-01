@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Nayara 😂</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:linear-gradient(135deg,#ffd6e7,#d9e7ff);min-height:100vh;display:flex;justify-content:center;align-items:center;padding:20px}
+.contenedor{background:#fff;width:100%;max-width:500px;padding:35px;border-radius:25px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+h1{color:#ff4f87;margin-bottom:25px} p{font-size:18px;color:#444}
+button{border:0;background:#ff4f87;color:#fff;padding:14px 28px;border-radius:25px;font-size:17px;cursor:pointer;margin-top:20px;-webkit-appearance:none}
+.boton-whatsapp{background:#25D366;width:100%;margin-top:15px}
+.pregunta{text-align:left;margin:20px 0}.pregunta label{display:block;margin:8px 0;cursor:pointer}
+input[type=text]{width:100%;padding:12px;border:2px solid #ddd;border-radius:10px;font-size:16px}
+#formulario,#resultado{display:none}.emoji{font-size:55px}.felicidades{color:#ff4f87;font-size:28px;font-weight:bold}.pequeno{font-size:14px;color:#888}
+</style>
+</head>
+<body>
+<div class="contenedor">
+<div id="inicio"><div class="emoji">👋</div><h1>Hola Nayara</h1><button onclick="mostrarFormulario()">Siguiente</button></div>
+
+<div id="formulario">
+<h1>Prueba extremadamente difícil 😂</h1>
+<p>Responde estas preguntas básicas, a ver si eres capaz jajajaja.</p>
+<div class="pregunta"><strong>1. ¿Cuánto es 2 + 2?</strong><label><input type="radio" name="p1" value="4"> 4</label><label><input type="radio" name="p1" value="5"> 5</label></div>
+<div class="pregunta"><strong>2. ¿De qué color es normalmente el cielo?</strong><label><input type="radio" name="p2" value="azul"> Azul</label><label><input type="radio" name="p2" value="verde"> Verde</label></div>
+<div class="pregunta"><strong>3. ¿Cuántos días tiene una semana?</strong><label><input type="radio" name="p3" value="7"> 7</label><label><input type="radio" name="p3" value="10"> 10</label></div>
+<div class="pregunta"><strong>4. Escribe tu nombre:</strong><input type="text" id="nombre" placeholder="Escribe aquí..."></div>
+<button onclick="verificar()">Enviar respuestas</button>
+</div>
+
+<div id="resultado">
+<div class="emoji">🎉😉</div><div class="felicidades">¡FELICIDADES!</div>
+<p>Te ganaste un premio de <strong>5 cm</strong> 😂</p><p>Recalmao/a, babosa 😏</p>
+<button class="boton-whatsapp" onclick="reclamar()">📱 Reclamar</button>
+<p class="pequeno">A ver si de verdad vienes a reclamarlo 😂</p>
+</div>
+</div>
+
+<script>
+function mostrarFormulario(){document.getElementById("inicio").style.display="none";document.getElementById("formulario").style.display="block";}
+function verificar(){
+const p1=document.querySelector('input[name="p1"]:checked'),p2=document.querySelector('input[name="p2"]:checked'),p3=document.querySelector('input[name="p3"]:checked'),nombre=document.getElementById("nombre").value.trim();
+if(!p1||!p2||!p3||!nombre){alert("Ey, Nayara 😂. Te faltan respuestas.");return;}
+if(p1.value==="4"&&p2.value==="azul"&&p3.value==="7"){document.getElementById("formulario").style.display="none";document.getElementById("resultado").style.display="block";}
+else{alert("JAJAJAJA fallaste 😭. Inténtalo otra vez.");}
+}
+function reclamar(){window.location.href="https://wa.me/573215813881?text="+encodeURIComponent("Quiero reclarmelo");}
+</script>
+</body>
+</html>
